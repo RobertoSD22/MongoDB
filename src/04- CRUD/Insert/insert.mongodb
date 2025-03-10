@@ -1,0 +1,16 @@
+use("platzi_store_nube"); // Cuando la bd no existe, se crea con este comando
+
+// Si hay más de dos instrucciones solo aparece el resultado de la última
+db.products.insertOne({
+  "_id": 5,
+  "atributo1": "valor1", 
+    "atributo2": "valor2",
+});
+
+db.products.insertOne({
+  "_id": 6,
+    "atributo1": "valor1", 
+    "atributo2": "valor2",
+});
+
+db.products.find();
