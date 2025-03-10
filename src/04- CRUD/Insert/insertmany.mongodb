@@ -1,0 +1,42 @@
+use("platzi_store_nube");
+
+db.products.drop();
+
+db.products.insertMany([
+    {
+      "_id": 1,
+      "name": "Smartphone 1",
+      "description": "Description 1",
+      "price": 100,
+      "category": "Category 1",
+      "stock": 10,
+    },
+    {
+      "_id": 2,
+      "name": "Smartphone 2",
+      "description": "Description 2",
+      "price": 200,
+      "category": "Category 2",
+      "stock": 20,
+    },
+    {
+      "_id": 1,
+      "name": "Smartphone 3",
+      "description": "Description 3",
+      "price": 300,
+      "category": "Category 3",
+      "stock": 30,
+    },
+    {
+      "_id": 4,
+      "name": "Smartphone 4",
+      "description": "Description 4",
+      "price": 400,
+      "category": "Category 4",
+      "stock": 40,
+    },
+  ], {
+    ordered: false, //Con esta instrucción se insertan los documentos que no generan error
+  });
+
+  db.products.find();
