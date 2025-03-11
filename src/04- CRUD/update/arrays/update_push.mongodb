@@ -1,0 +1,7 @@
+use("platzi_store_nube")
+
+//Agrega elementos
+db.inventory.updateOne(
+  { _id: 1 },
+  { $push: { tags: "new tag" } }
+)
