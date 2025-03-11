@@ -1,0 +1,12 @@
+use("sample_training");
+
+db.zips.updateMany(
+  {
+    state: "New York"
+  },
+  {
+    $set: {
+      roberto: "El mejor"
+    }
+  }
+);

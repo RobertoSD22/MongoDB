@@ -1,0 +1,12 @@
+use("platzi_store_nube");
+
+db.products.updateOne(
+    {"_id": 1}, 
+    {
+        $inc: {
+            "price": 101, //Le suma 101 al precio
+        }
+    }
+);
+
+db.products.find();

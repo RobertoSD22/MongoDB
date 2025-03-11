@@ -1,0 +1,12 @@
+use("platzi_store_nube");
+
+db.products.updateOne(
+    {"_id": ObjectId('67cf7c9918867ba075b000e3')}, 
+    {
+        $set: {
+            "price": 444, 
+        }
+    }
+);
+
+db.products.find();
