@@ -1,0 +1,5 @@
+use("platzi_store")
+
+// Encuentra todos los documentos en la colección inventory donde el valor del campo qty es diferente a 20.
+db.inventory.find({ qty: { $ne: 20 } });
+

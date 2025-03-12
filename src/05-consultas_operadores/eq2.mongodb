@@ -1,0 +1,10 @@
+use("platzi_store")
+
+//Buscando dentro de un objeto en sus atributos
+// Encuentra todos los documentos en la colección inventory donde el valor del campo item PUNTO name es exactamente igual a 20.
+db.inventory.find({ "item.name": { $eq: "ab" } });
+
+db.inventory.find({ "item.code": { $eq: "123" } });
+
+//Es lo mismo que el anterior sin usar el operador
+//db.inventory.find({ "item.name": "ab" });
