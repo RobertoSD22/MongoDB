@@ -1,0 +1,7 @@
+use("platzi_store")
+
+//Combinando operadores
+
+db.inventory.find({ qty: { $lte: 35, $gte: 25} })
+
+db.inventory.find({ "item.name": "xy", qty: { $lte: 35, $gte: 25} })
