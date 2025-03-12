@@ -1,0 +1,4 @@
+use("platzi_store")
+
+//Eliminamos muchos
+ db.products.deleteMany({ price:100});

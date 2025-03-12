@@ -1,0 +1,6 @@
+use("platzi_store")
+
+//Eliminamos solo uno
+ db.products.deleteOne({ _id: 1 });
+// db.products.deleteOne({ _id: ObjectId('sasdadsad') }); Por object id
+
