@@ -1,0 +1,10 @@
+use("sample_training")
+
+
+// NOR
+db.inspections.find({
+    $nor: [
+        { sector: "Tax Preparers - 891" },
+        { sector: {$regex: /smith/} }
+    ]
+})

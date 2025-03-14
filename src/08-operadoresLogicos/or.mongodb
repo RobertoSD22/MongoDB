@@ -1,0 +1,17 @@
+use("sample_training")
+
+//685
+// db.inspections.find({
+//     $eq: [
+//         { sector: "Tax Preparers - 891" }
+//     ]
+// }).count()
+
+// OR
+//731 
+db.inspections.find({
+    $or: [
+        { sector: "Tax Preparers - 891" },
+        { sector: {$regex: /smith/} }
+    ]
+}).count()

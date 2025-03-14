@@ -1,0 +1,15 @@
+use("sample_training")
+
+// AND implicito
+db.inspections.find({
+    sector: "Tax Preparers - 891",
+    result: "Unable to Locate"
+}).count()
+
+// AND explícito
+db.inspections.find({
+    $and: [
+        { sector: "Tax Preparers - 891" },
+        { result: "Unable to Locate" }
+    ]
+}).count()

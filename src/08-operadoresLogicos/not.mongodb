@@ -1,0 +1,6 @@
+use("sample_training")
+
+// NOT
+db.inspections.find({
+    result: { $not: {$regex: /Unable/i} }
+})
