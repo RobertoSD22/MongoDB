@@ -1,0 +1,12 @@
+use("platzi_store")
+
+
+// $in en una busqueda normal
+// db.inventory.find({
+//     qty: {$in: [20, 25]}
+// })
+
+// Dentro de un array
+db.inventory.find({
+    tags: {$in: ["school", "book"]}
+})

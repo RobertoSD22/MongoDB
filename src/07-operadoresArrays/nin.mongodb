@@ -1,0 +1,12 @@
+use("platzi_store")
+
+
+// $nin en una busqueda normal
+// db.inventory.find({
+//     qty: {$nin: [20, 25]}
+// })
+
+// Que no este dentro de un array
+db.inventory.find({
+    tags: {$nin: ["book"]}
+})

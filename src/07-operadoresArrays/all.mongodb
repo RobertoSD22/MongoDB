@@ -1,0 +1,11 @@
+use("platzi_store")
+
+// Busca los documentos que tengan el campo tags con el valor "book"
+// db.inventory.find({
+//     tags: ["school","book"] //Va a traer los que cumplen EXACTAMENTE con ese array y en ese orden
+// }) 
+
+// $%all: Busca los documentos que tengan el campo tags con los valores "school" y "book"
+db.inventory.find({
+    tags: {$all: ["school","book"]} //Va a traer los que CUMPLEN con esos valores SIN importar el orden
+})

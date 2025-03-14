@@ -1,0 +1,6 @@
+use("platzi_store")
+
+// $elemMatch: Busca los documentos que tengan el campo results con el campo product con el valor "xyz" 
+db.survey.find({
+    results: { $elemMatch: {product: "xyz"} }
+})

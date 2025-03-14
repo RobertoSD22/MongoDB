@@ -1,0 +1,6 @@
+use("platzi_store")
+
+// $size: Busca los documentos que tengan el campo tags con 2 elementos
+db.inventory.find({
+    tags: {$size: 2} //Va a traer los que tengan 2 elementos en el array
+})
