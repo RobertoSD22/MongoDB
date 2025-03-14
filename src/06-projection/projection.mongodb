@@ -1,0 +1,20 @@
+use("sample_training")
+
+
+// Sirven para traer ciertos campos y no todos los que tiene el documento
+db.trips.find(
+    //where
+    {"bikeid":
+        {
+            $in: [23933, 14562]
+        }
+    },
+    //projection
+    {
+        "_id": 0, // Este campo no se va a mostrar (por el 0)
+        "start station name": 1, // Este campo si se va a mostrar (por el 1)
+        "end station name": 1,
+        "bikeid": 1
+        
+    }
+)
