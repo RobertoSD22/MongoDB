@@ -1,0 +1,12 @@
+
+use("platzi_store")
+
+db.inventory.find();
+
+
+// Buscar todos los documentos que tengan una descripción que contenga la palabra "First"
+db.inventory.find({
+    "item.description" : {
+        $regex: /LINE/i // i es para que sea case insensitive
+    }
+})
