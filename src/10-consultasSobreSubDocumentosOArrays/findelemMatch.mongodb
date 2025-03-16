@@ -1,0 +1,13 @@
+use("sample_training")
+
+// Buscamos todos los documentos que tengan un subdocumento con la propiedad person.first_name con el valor "Mark"
+db.companies.find({
+    relationships: {
+        $elemMatch: {
+            "person.first_name": "Mark"
+        }
+    }
+}, {
+    name: 1,
+    relationships : 1
+}).count()

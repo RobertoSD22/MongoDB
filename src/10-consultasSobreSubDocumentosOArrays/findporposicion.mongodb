@@ -1,0 +1,18 @@
+use("sample_training")
+
+// Buscamos sobre la posición del array de relationships en este caso 0 que son los CEO
+db.companies.find({
+    "relationships.0.person.last_name": "Zuckerberg"
+}, {
+    name: 1,
+    relationships : 1
+})
+
+
+// Buscamos sobre la posición del array de relationships en este caso 0 que son los CEO
+db.companies.find({
+    "relationships.0.person.first_name": "Mark"
+}, {
+    name: 1,
+    relationships : 1
+})
