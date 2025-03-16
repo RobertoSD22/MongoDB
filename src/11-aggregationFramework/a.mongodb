@@ -1,0 +1,45 @@
+use("sample_airbnb")
+
+// Así es una búsqueda normal, como las venimos trabajando en el curso
+db.listingsAndReviews.find({
+    amenities: "Wifi"
+},{
+    price: 1,
+    amenities: 1
+})
+
+// Ahora con agregación
+db.listingsAndReviews.aggregate([
+    {
+        $match: { //Capa 1
+            amenities: "Wifi"
+        }
+    },
+    {
+        $project: { //Capa 2
+            price: 1,
+            amenities: 1
+        }
+    }
+])
+
+// Ahora con agregación, pero con otra capa
+db.listingsAndReviews.aggregate([
+    {
+        $match: { //Capa 1
+            amenities: "Wifi"
+        }
+    },
+    {
+        $project: { //Capa 2
+            price: 1,
+            amenities: 1,
+            address: 1
+        }
+    },
+    {
+        $group: { // Capa 3
+          _id: "$address.country"
+        }
+    }
+])
