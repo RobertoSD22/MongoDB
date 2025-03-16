@@ -1,0 +1,20 @@
+//Sirve para páginaciones
+use("sample_training")
+
+// SKIP - Traer algunos resultados a partir del apuntador SKIP
+// En otros lados se le llama OFFSET
+db.zips
+.find({
+    pop: {
+        $gt: 100
+    }
+},{
+    _id: 0,
+    city: 1,
+    pop: 1
+})
+.sort({
+    pop: 1
+})
+.limit(2)
+.skip(2); //Salta los primeros 2 resultados

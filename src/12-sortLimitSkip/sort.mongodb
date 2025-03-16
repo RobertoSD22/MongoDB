@@ -1,0 +1,17 @@
+use("sample_training")
+
+// SORT - Ordenar
+db.zips
+.find({
+    pop: {
+        $gt: 100
+    }
+},{
+    _id: 0,
+    city: 1,
+    pop: 1
+})
+// 1 es ascendente, -1 es descendente
+.sort({
+    pop: 1
+})

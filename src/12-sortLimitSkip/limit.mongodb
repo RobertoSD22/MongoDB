@@ -1,0 +1,18 @@
+use("sample_training")
+
+// LIMIT - Traer algunos resultados
+db.zips
+.find({
+    pop: {
+        $gt: 100
+    }
+},{
+    _id: 0,
+    city: 1,
+    pop: 1
+})
+.sort({
+    pop: 1
+})
+// Limitar a 2 resultados
+.limit(2);
