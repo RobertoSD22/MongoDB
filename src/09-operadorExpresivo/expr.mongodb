@@ -1,0 +1,37 @@
+use("platzi_store")
+
+// 1.1.- Buscar los documentos donde el campo spent sea mayor o igual a 100
+db.monthlyBudget.find({
+    spent: {$gte: 100}
+})
+
+// 1.2.- Ahora usando el operador expresivo $expr
+db.monthlyBudget.find({
+    $expr: {
+        $gte: ["$spent", 100]
+    }
+})
+
+// 2.- Buscar los documentos donde el campo spent sea mayor o igual al campo budget
+db.monthlyBudget.find({
+    $expr: {
+        $gte: ["$spent", "$budget"] // Busqueda entre campos
+    }
+})
+
+// 3.- Buscar los documentos donde el campo spent igual al campo budget
+db.monthlyBudget.find({
+    $expr: {
+        $eq: ["$spent", "$budget"] // Busqueda entre campos
+    }
+})
+
+//4.- Buscar los documentos donde el campo spent sea igual al campo budget y mayor o igual a 100
+db.monthlyBudget.find({
+    $expr: {
+        $and: [
+            {$gte: ["$spent", "$budget"]},
+            {$gte: ["$spent", 100]}
+        ]
+    }
+})
