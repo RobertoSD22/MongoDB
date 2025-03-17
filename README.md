@@ -20,5 +20,6 @@ Este proyecto contiene ejemplos prácticos y comandos útiles para trabajar con 
   ## Requisitos Previos
 
 - Docker y Docker Compose instalados.
-- MongoDB Shell (`mongosh`) para ejecutar consultas.
+- MongoDB Shell (`mongosh`) para ejecutar consultas / la extensión de VSC de Mongo / Mongo Compass.
+- Descargar los ejemplos de BD que proporciona MongoDB (La de AirBnB por ejemplo)
 
